@@ -1,3 +1,18 @@
+// --- EXPRESS KEEP-ALIVE SERVER FOR RENDER ---
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => res.send('Bot is alive!'));
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+  console.log(`✅ Keep-alive server running on port ${port}`);
+});
+
+app.get("/", (req, res) => res.send("✅ Bot is alive!"));
+app.listen(3000, () => console.log("🌐 Keep-alive web server running"));
+
+
 const { Client, GatewayIntentBits, EmbedBuilder, PermissionFlagsBits, ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } = require('discord.js');
 const fs = require('fs');
 const fetch = require('node-fetch');
